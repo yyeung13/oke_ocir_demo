@@ -98,5 +98,68 @@ The overview of the demo is as follows:
   - Your image is now uploaded to OCIR and you can verify from OCI Console. Navigate from hamburger icon to 'Developer Services' -> 'Registry'. Make sure your image can be found here
     
 8. Pull Tomcat Image from OCIR and Deploy Pods in OKE
+
+  - I'll provide simple steps here on how to do this. Should you require more details, please refer to official guide here https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/oke-and-registry/index.html
+  - From OCI CLI command prompt, create a new file called 'createSecret.sh' with the following content:
+    - kubectl create secret docker-registry ocirsecret
+--docker-server=<region-key>.ocir.io --docker-username='<tenancy-namespace>/<oci-username>' --docker-password='<oci-auth-token>' --docker-email='<email-address>'
+    - The name of the secret is called ocirsecret above (you can change to other name if you want to) and you will be providing the same ID and password used for OCIR login in previous steps
+  - Save this file and change mode 'chmod 755 createSecret.sh'
+  - Run the above file './createSecret.sh'
+  - To verify the secret is created, run 'kubectl get secrets' and make sure the secret you created can be seen here
+  - Create a empty yaml file called 'tomcat.yaml' with the following content
+  
+```
+  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-deployment
+spec:
+  selector:
+    matchLabels:
+      app: tomcat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+      - name: tomcat
+    # enter the path to your image, be sure to include the correct region prefix
+        image: <region_code>.ocir.io/<tenancy_namespace>/tomcat:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+    # enter the name of the secret you created
+      - name: ocirsecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-service
+spec:
+  ports:
+  - name: admin
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: tomcat
+  type: LoadBalancer
+```
+   - Change the image location to match the location used for docker push in the above yaml file
+   - If the OCIR secret is not named 'ocirsecret', change the secret name in the above yaml file accordingly too
+   - Save the above file
+   - To pull the image from OCIR, run 'kubectl create -f tomcat.yaml', OKE will now pull image from OCIR and deploy it
+   - To verify deployment, use 'kubectl get po' to check if the Tomcat pod is running
+   - To check how to access Tomcat from public IP, use 'kubectl get services' to check the public IP for the tomcat load balancer. Note that sometimes it does take a bit longer to assign public IP to the load balancer service
+   - Test Tomat with http://<public_ip>:8080, you should see a page not found (404) error as explained earlier
+   - Great, you are done!
+   - [Optional] To scale up/down the Tomcat pod, simply change the value of 'replica' in tomcat.yaml, and run 'kubectl apply -f tomcat.yaml'
+   - [Optional] Should you wish to housekeep whatever we created in this tutorial, simply run 'kubectl delete -f tomcat.yaml'
+    
+    
 9. [Optional] Configure Private GIT in Developer Cloud Service
 

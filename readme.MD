@@ -80,7 +80,7 @@ The overview of the demo is as follows:
   - Now that OKE is up and running, let's move on to OCIR and see how we can use it. First, we obtain a tomcat image locally from Docker Hub (If you have not installed Docker locally, please go ahead to install it first)
   - Run 'docker pull tomcat' if you have never pulled official tomcat image before. You may be asked to login to Docker Hub if you have not login before. Should you are new to Docker, please sign up with Docker before this step
   - To verify your image is already downloaded, you can run 'docker images' and check the output for Tomcat image
-  - To run the downloaded image locally first, run 'docker run -it -p 8080:8080 tomcat', you should see Tomcat starting. You can access Tomcat from http://localhost:8080. However, you should see a page not found error. This is because the default Tomcat image is a bare minimum image with no apps deployed. To deploy the default apps back to Tomcat image, follow guideline from [a link](new_page.MD). For now, please press Ctrl+C and move on to the next step.
+  - To run the downloaded image locally first, run 'docker run -it -p 8080:8080 tomcat', you should see Tomcat starting. You can access Tomcat from http://localhost:8080. However, you should see a page not found error. This is because the default Tomcat image is a bare minimum image with no apps deployed. To deploy the default apps back to Tomcat image, follow guideline from [a link](customise_tomat.MD). For now, please press Ctrl+C and move on to the next step.
 
 7. Push Tomcat Image to OCIR
   - I'll provide simple steps here on how to do this. Should you require more details, please refer to official guide here https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/registry/index.html

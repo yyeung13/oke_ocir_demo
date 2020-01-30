@@ -25,7 +25,7 @@ The steps are as follows:
 - Now let's tag this docker image in preparation to push to OCIR by running 'docker tag 5ff5e0961a5e <region_code>.ocir.io/<tenancy_namespace>/<repo_name>/<image_name>', e.g., 'docker tag 5ff5e0961a5e iad.ocir.io/mytenancy/demo/tomcat2'. Note that I have purposely use a different image name so as not to overwrite the default tomcat image in OCIR. You can also choose to overwrite the default tomcat image if you want to.
 - After tagging, you can now push the image to OCIR by running 'docker push <region_code>.ocir.io/<tenancy_namespace>/<repo_name>/<image_name>:latest', e.g., 'docker push iad.ocir.io/mytenancy/demo/tomcat2'
 
-3 Upon successful push, you can use OCI CLI from Debian to pull the image and deploy to OKE
+3. Upon successful push, you can use OCI CLI from Debian to pull the image and deploy to OKE
 
 - From Debian console, update YAML file tomcat.yaml to update the image location from 'tomcat' to 'tomcat2', e.g., iad.ocir.io/mytenancy/demo/tomcat2
 - If the previous Tomcat pod is still running, remove it by 'kubectl delete -f tomcat.yaml'

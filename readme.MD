@@ -28,7 +28,7 @@ The overview of the demo is as follows:
     - Name: allow_OKE
     - Description: Allow OKE to manage resources
     - Version Date: Keep Policy Current
-    - Select Compartment to be the new Compartment Created, e.g., democompartment
+    - Select root compartment as this policy should be applicable to the root compartment instead of only the specific compartment for OKE
     - Add policy statement as follows 'allow service OKE to manage all-resources in tenancy'. Note that this **MUST** be exact.
   - Click on 'Create'
   - You should see the new policy created
@@ -94,7 +94,7 @@ The overview of the demo is as follows:
       - Provide user name in the following format: <tenancy-namespace>/oracleidentitycloudservice/<username>, e.g., mytenancy/oracleidentitycloudservice/y.yeung@oracle.com
       - Provide the token secret you kept when generating the auth token
   - Now tag the docker image to push with 'docker tag <local_image_name>:latest <region-key>.ocir.io/<tenancy_namespace>/<repo-name>/<image-name>:<tag>', e.g., docker tag tomcat:latest iad.ocir.io/<tenancy_namespace>/demo/tomcat:latest
-  - Push image by running 'docker push iad.ocir.io/ideajodsrjdx/demo/tomcat:latest'
+  - Push image by running 'docker push iad.ocir.io/<tenancy_namespace>/demo/tomcat:latest'
   - Your image is now uploaded to OCIR and you can verify from OCI Console. Navigate from hamburger icon to 'Developer Services' -> 'Registry'. Make sure your image can be found here
     
 8. Pull Tomcat Image from OCIR and Deploy Pods in OKE

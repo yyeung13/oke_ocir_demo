@@ -69,7 +69,7 @@ The overview of the demo is as follows:
   - You public/private OCI Signing key is now stored in <home>/.oci
   - Configure API Signing key in OCI from "User Settings' menu and click 'API Keys' under 'Resources' menu. Note that you can only specify up to 3 signing keys here
   - Click 'Add Public Key', and upload the content in oci_api_key_public.pem here. This file can be found in <home>/.oci
-  - Now go back to 'Container Cluster (OKE)', click on 'mycluster'. OKE make it easy for you to complete the rest of CLI setup by providing detailed instruction under 'Access Kubeconfig', under the cluster name 'mycluster'. Click that and follow the instructions. The paramters required has been pre-filled for you. Yay!
+  - Now go back to 'Container Cluster (OKE)', click on 'mycluster'. OKE make it easy for you to complete the rest of CLI setup by providing detailed instruction under 'Access Kubeconfig', under the cluster name 'mycluster'. Click that and follow the instructions. The paramters required has been pre-filled for you. Yay! In case you encounter error on Not Authorized/401, you may want to clear the folder for .oci and .kube and try again.
   - Upon completion, run a quick check on the pods by running 'kubectl get po'. You should see no pods are running yet. You are ready to move on to next step
   
 5. Access Kubernetes Dashboard

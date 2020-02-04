@@ -5,6 +5,7 @@ This series of demo explains how to use Oracle technologies for DevOps. At the m
 - OKE and OCIR Demo: Showcase How to configure Oracle Managed Kubernetes Cluster, and How to use OCI Registry for storing docker images and pulling images for deployment to Kubernetes. The demo is in this page
 - Container Pipeline Demo (Werker with OKE): Showcase how to use Container Pipeline to manage CI/CD using a Springboot REST API as example. The demo is here: https://github.com/yyeung13/wercker_oke_demo
 - Prometheus and Grafana Demo: Showcase how to configure Prometheus and Grafana to monitor the REST API develoepd in previous demo. The demo is here: https://github.com/eugeniapay/Springboot_Prometheus_Grafana
+  - Demo solution in https://github.com/yyeung13/spring-rest-service-monitoring
 
 More demos are on the way.
 

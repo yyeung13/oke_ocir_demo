@@ -7,7 +7,7 @@ This series of demo explains how to use Oracle technologies for DevOps. At the m
 - Prometheus and Grafana Demo: Showcase how to configure Prometheus and Grafana to monitor the REST API develoepd in previous demo. The demo is here: https://github.com/eugeniapay/Springboot_Prometheus_Grafana
   - Demo solution in https://github.com/yyeung13/spring-rest-service-monitoring
  
-- WebLogic on Docker Demo: Demonstrate how to run WebLogic on Docker and deploy applications on WebLogic, as well as updating the modified container into a new Docker image (with apps deployed) https://github.com.yyeung13./weblogic_docker_demo
+- WebLogic on Docker Demo: Demonstrate how to run WebLogic on Docker and deploy applications on WebLogic, as well as updating the modified container into a new Docker image (with apps deployed) https://github.com/yyeung13/weblogic_docker_demo
 
 More demos are on the way.
 

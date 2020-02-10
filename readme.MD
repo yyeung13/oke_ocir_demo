@@ -8,6 +8,7 @@ This series of demo explains how to use Oracle technologies for DevOps. At the m
   - Demo solution in https://github.com/yyeung13/spring-rest-service-monitoring
  
 - WebLogic on Docker Demo: Demonstrate how to run WebLogic on Docker and deploy applications on WebLogic, as well as updating the modified container into a new Docker image (with apps deployed) https://github.com/yyeung13/weblogic_docker_demo
+- Bastion Host Demo: Demo how to connect to computes with no private IP on OCI Gen 2 https://github.com/yyeung13/bastion_host_demo/
 
 More demos are on the way.
 

@@ -105,7 +105,7 @@ The overview of the demo is as follows:
     - Note the tenancy namespace by navigation from OCI Console's hamburger icon to 'Developer Services' -> 'Registry'. The tenancy namespace will be a random string shown next to the home icon. Note this tenancy namespace too.
     - Identify your domain key from https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm. For example, if you are on us-ashburn-1, your domain key is iad
     - Before you can push an image to OCIR, you need to login first. Run 'docker login <domain_key>.ocir.io', e.g., docker login iad.ocir.io
-      - Provide user name in the following format: '<tenancy-namespace>/oracleidentitycloudservice/<username>', e.g., mytenancy/oracleidentitycloudservice/y.yeung@oracle.com
+      - Provide user name in the following format: 'tenancy-namespace/oracleidentitycloudservice/username', e.g., mytenancy/oracleidentitycloudservice/y.yeung@oracle.com
       - Provide the token secret you kept when generating the auth token
   - Now tag the docker image to push with 'docker tag <local_image_name>:latest <region-key>.ocir.io/<tenancy_namespace>/<repo-name>/<image-name>:<tag>', e.g., docker tag tomcat:latest iad.ocir.io/<tenancy_namespace>/demo/tomcat:latest
   - Push image by running 'docker push iad.ocir.io/<tenancy_namespace>/demo/tomcat:latest'

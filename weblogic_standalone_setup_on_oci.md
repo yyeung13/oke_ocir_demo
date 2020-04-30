@@ -68,4 +68,35 @@ Run the install by running command: java -jar fmw_14.1.1.0.0_wls.jar. You should
 
 ![Screenshot 8](images/weblogic_install/screenshot8.jpg)  
 
+Enter /home/opc/oraInventory as the inventory directory as follows:  
 
+![Screenshot 9](images/weblogic_install/screenshot9.jpg)  
+
+And click on OK:  
+
+![Screenshot 10](images/weblogic_install/screenshot10.jpg)  
+
+Click 'Next':  
+
+![Screenshot 11](images/weblogic_install/screenshot11.jpg)  
+
+Leave everything as default and click 'Next':  
+
+![Screenshot 12](images/weblogic_install/screenshot12.jpg)  
+
+Accept default home and click 'Next':  
+
+![Screenshot 13](images/weblogic_install/screenshot13.jpg)  
+
+Accept default installation choice and click 'Next'. -Pre-Installation check will start now. Please wait for it to complete:  
+
+![Screenshot 15](images/weblogic_install/screenshot15.jpg)  
+
+Click 'Next' and 'Install' from Summary screen to start the installation process and wait for it to complete:  
+
+![Screenshot 16](images/weblogic_install/screenshot16.jpg)  
+
+
+Click on 'Finish' to complete the installation.  Now you have WebLogic installed on OCI. You can now proceed to create new domains with Domain Configuration Wizard.  
+
+Thank you.

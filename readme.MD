@@ -33,7 +33,7 @@ The overview of the demo is as follows:
   - And click 'Create Compartment'
   - You should see the new compartment created with status 'Active'
 
-2. Configure Policy to Allow OKE to Manage Resources in OCI
+2. Configure Policy to Allow OKE to Manage Resources in OCI (This step is no longer needed, please move to step 3)
 
 - Click on 'Policies' from the Left Menu
 - If the policy 'allow_OKE' has  not been created already, create a new Policy called 'allow_OKE'

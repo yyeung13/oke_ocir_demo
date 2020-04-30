@@ -99,4 +99,4 @@ Click 'Next' and 'Install' from Summary screen to start the installation process
 
 Click on 'Finish' to complete the installation.  Now you have WebLogic installed on OCI. You can now proceed to create new domains with Domain Configuration Wizard.  
 
-Thank you.
+Thank you, should you encounter any problems, please feel free to drop me a note at y.yeung@oracle.com.

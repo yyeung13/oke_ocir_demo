@@ -9,7 +9,7 @@ This series of demo explains how to use Oracle technologies for DevOps. At the m
  
 - WebLogic on Docker Demo: Demonstrate how to run WebLogic on Docker and deploy applications on WebLogic, as well as updating the modified container into a new Docker image (with apps deployed) https://github.com/yyeung13/weblogic_docker_demo
 - Bastion Host Demo: Demo how to connect to computes with no private IP on OCI Gen 2 https://github.com/yyeung13/bastion_host_demo/
-
+- Install WebLogic On Prem on OCI: How to install WebLogic On Prem on OCI https://github.com/yyeung13/oke_ocir_demo/blob/master/weblogic_standalone_setup_on_oci.md
 More demos are on the way.
 
 # OKE and OCIR Demo

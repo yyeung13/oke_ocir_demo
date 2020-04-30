@@ -36,9 +36,8 @@ You should be able to see the follow
 
 The easist way is to use MobaTerm (https://mobaxterm.mobatek.net/download.html). You can, however, use other ways such as VNC too. This guide will explain how to export display with MobaTerm. The rest of the guide assume you have MobaTerm installed locally (Home edition is sufficient)  
 
-Follow instruction in (https://docs.cloud.oracle.com/en-us/iaas/Content/Resources/Assets/whitepapers/run-graphical-apps-securely-on-oci.pdf) to export display. For simplicity, this guide will highlight the steps you need to perform here.  
 
-The commands you need to run in sequence are:  
+Run the following from SSH:  
 
 - sudu su -
 - cd /etc/ssh/
@@ -51,9 +50,13 @@ The commands you need to run in sequence are:
 
 ![Screenshot 7](images/weblogic_install/screenshot7.jpg)  
 
-- restart SSHD: systemctl restart sshd
+- systemctl start sshd.service
+- systemctl enable sshd.service
 - Install xauth & xterm: yum -y install xauth xterm
+- Install Xtst: yum -y install libXtst.x86_64
 - Exit root environment by running: exit
+
+- To verify the GUI export is working, you can install xclock and run xclock to test from SSH console
 
 ## Step 4: Extract WebLogic Installer
 
@@ -61,6 +64,8 @@ From install folder, run command: unzip fmw_14.1.1.0.0_wls_Disk1_1of1.zip
 
 ![Screenshot 6](images/weblogic_install/screenshot6.jpg)  
 
-Run the install by running command: java -jar fmw_14.1.1.0.0_wls.jar  
+Run the install by running command: java -jar fmw_14.1.1.0.0_wls.jar. You should see the follow:  
+
+![Screenshot 8](images/weblogic_install/screenshot8.jpg)  
 
 

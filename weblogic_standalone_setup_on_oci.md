@@ -43,7 +43,7 @@ Run the following from SSH:
 - cd /etc/ssh/
 - vi sshd_config
 - Search for the line that has X11UseLocalhost yes (it’s commented out).
-- remove the comment from the beginning of the line.
+- remove the comment from the beginning of the line and change the setting to no.
 - Search for the line that has X11DisplayOffset (it’s commented out).
 - remove the comment from the beginning of the line.
 - save the file  

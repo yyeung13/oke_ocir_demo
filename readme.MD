@@ -66,7 +66,7 @@ The overview of the demo is as follows:
   - You can now see the status of the OKE cluster as 'CREATING'. Wait for this to complete. Once done, you have now created a new Kubernetes Cluster!
   
 4. Configure Command Line Interface (CLI) for OKE
-  - CLI is for you to manage the OKE cluster created. You can configure CLI on your laptop with Debian or Powershell. For this demo, I am using Debian
+  - CLI is for you to manage the OKE cluster created. You can configure CLI on your laptop with Debian or Powershell. For this demo, I am using Debian (In the latest version of OCI, you have the option of running the CLI from cloud shell which doesn't require you to setup CLI locally. If you are using cloud shell, please skip this section and move to next step)
   - Before you can proceed, capture the following information:
     - User OCID: Click on Profile Icon from top right hand corner of OCI console, and select 'User Settings'. You can find User OCID from 'User Information' tab
     - Tenancy OCID: Click on Profile Icon from top right hand corner of OCI console, and select 'Tenancy: <tenancy_name>'. You can find Tenancy OCID from 'Tenancy Information' tab
@@ -86,9 +86,18 @@ The overview of the demo is as follows:
   - Now go back to 'Container Cluster (OKE)', click on 'mycluster'. OKE make it easy for you to complete the rest of CLI setup by providing detailed instruction under 'Access Kubeconfig', under the cluster name 'mycluster'. Click that and follow the instructions. The paramters required has been pre-filled for you. Yay! In case you encounter error on Not Authorized/401, you may want to clear the folder for .oci and .kube and try again.
   - Upon completion, run a quick check on the pods by running 'kubectl get po'. You should see no pods are running yet. You are ready to move on to next step
   
+  
 5. Access Kubernetes Dashboard
 
   - To access the GUI-based Kubernetes Dashboard, followed the detailed instruction under 'Resources' -> 'Access Kubernetes Dashboard'. Again, detailed instrunctions are provided by OKE already.
+  - (5 May 2020): If you are running CLI from OCI compute, please perform the following additional steps
+    - SSH into OCI compute and login with default user 'opc'
+    - Open firewall rules for port 8001 by running 'sudo firewall-cmd --permanent --zone=public --add-port=8001/tcp'
+    - Reload firewall rules by running 'sudo firewall-cmd --reload'
+    - Instead of using 'kubectl proxy' to start the proxy, you need to use a slightly different format: kubectl proxy --address='10.0.0.7' --accept-hosts='.*'
+    - Note that the IP should be your compute's local IP which you can find from /etc/hosts, and accept-hosts specify that you are accepting requests from all hosts since when we access from public IP, the IP will be different
+    - Open Ingress rules in security list from the subnet where your compute is in and allow port 8001 for all TCP traffic
+    - You should be able to access kubernetes dashboard from your local laptop now
   
 6. Obtain Tomcat Images
   - Now that OKE is up and running, let's move on to OCIR and see how we can use it. First, we obtain a tomcat image locally from Docker Hub (If you have not installed Docker locally, please go ahead to install it first)

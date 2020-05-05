@@ -50,6 +50,7 @@ Run the following from SSH:
 
 ![Screenshot 7](images/weblogic_install/screenshot7.jpg)  
 
+- systemctl stop sshd.service
 - systemctl start sshd.service
 - systemctl enable sshd.service
 - Install xauth & xterm: yum -y install xauth xterm

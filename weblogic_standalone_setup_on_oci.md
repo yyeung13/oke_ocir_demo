@@ -56,6 +56,7 @@ Run the following from SSH:
 - Install xauth & xterm: yum -y install xauth xterm
 - Install Xtst: yum -y install libXtst.x86_64
 - Exit root environment by running: exit
+- Restart SSH session
 
 - To verify the GUI export is working, you can install xclock and run xclock to test from SSH console
 

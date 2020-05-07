@@ -159,12 +159,43 @@ Upon completion, go back to installer and click 'Check Again'
 
 Now only issue left is swap size.
 
+- While there are different ways to increase swap, we will only explain one that works on OCI here: By creating a new swap file
+
+- Create new swap file in /u01 in SSH:  
+
+sudo mkdir /u01/swap  
+
+- Create a new file into this new directory with 8Gb in size:  
+
+sudo dd if=/dev/zero of=/u01/swap/swapfile1 bs=1M count=8192  
+
+![wizard20](images/db_install/wizard20.jpg)  
+
+- Create a new swap area on the file that has been created
+
+sudo mkswap  /u01/swap/swapfile1  
+
+- Change the permissions on the file  
+
+sudo chmod 600 /u01/swap/swapfile1  
+
+![wizard21](images/db_install/wizard21.jpg)  
 
 
+- Add the swapfile to fstab by running: sudo vi /etc/fstab  
 
+Add '/u01/swap/swapfile1    swap   swap      defaults       0 0' based on the below:  
 
+![wizard22](images/db_install/wizard22.jpg)  
 
+- Load the new swap space that had been created for the Instance by running: sudo swapon -a  
 
-- 
+- To list the swap devices run the below command: sudo swapon -s  
+
+![wizard23](images/db_install/wizard23.jpg)  
+
+- Now go back to DB installer GUI to re-run the pre-requisite check:  
+
+![wizard24](images/db_install/wizard24.jpg)  
 
 Thank you, should you encounter any problems, please feel free to drop me a note at y.yeung@oracle.com.

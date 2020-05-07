@@ -198,4 +198,18 @@ Add '/u01/swap/swapfile1    swap   swap      defaults       0 0' based on the be
 
 ![wizard24](images/db_install/wizard24.jpg)  
 
+Now click 'Install' to start the installation process.  
+
+- Follow the instruction on screen to run the scripts:  
+
+![wizard25](images/db_install/wizard25.jpg)  
+
+![wizard26](images/db_install/wizard26.jpg)  
+
+Go back to Install GUI and click 'OK' to continue.
+
+
+- 
+
+
 Thank you, should you encounter any problems, please feel free to drop me a note at y.yeung@oracle.com.

@@ -50,4 +50,121 @@ When the download complete, review the files under /u01/install
 In order to run the installer, you need to export DISPLAY from OCI to your local laptop first. Follow the guide [here](enable_display_in_oci.md)  
 
 
+## Step 4: Install Database
+
+- Create a new folder /u01/oracle:  
+
+sudo mkdir /u01/oracle  
+sudo chown opc:opc /u01/oracle  
+cd /u01/oracle  
+
+- Extract Installer here:  
+
+unzip /u01/install/V982063-01.zip
+
+- Run installer:  
+
+./runInstaller  
+
+![screenshot6](images/db_install/db6.jpg)  
+
+Ignore the error message and wait for DB Installation GUI to show up on your laptop  
+
+- Click 'Next' to install DB software and create a single instance database
+
+![wizard1](images/db_install/wizard1.jpg)  
+
+- Select 'Server Class' since you are running on OCI Compute, and click 'Next'
+
+![wizard2](images/db_install/wizard2.jpg)  
+
+- Select 'Enterprise Edition', and click 'Next'
+
+![wizard3](images/db_install/wizard3.jpg)  
+
+- Create default Base  
+
+sudo mkdir /u01/app  
+sudo chown opc:opc /u01/app  
+
+- Accept default Oracle Base and click 'Next'
+
+![wizard4](images/db_install/wizard4.jpg)  
+
+- Accept default Inventory Directory and click 'Next'
+
+![wizard5](images/db_install/wizard5.jpg)  
+
+- Select default and click 'Next'
+
+![wizard6](images/db_install/wizard6.jpg)  
+
+- You can configure database name, SID and PDB name if you want to, the rest of the guide will assume you use default
+
+![wizard7](images/db_install/wizard7.jpg)  
+
+- Accept default configurations options and click 'Next'
+
+![wizard8](images/db_install/wizard8.jpg)  
+
+- Accept default storage on file and click 'Next'
+
+![wizard9](images/db_install/wizard9.jpg)  
+
+- Skip EM Configuration and click 'Next'
+
+![wizard10](images/db_install/wizard10.jpg)  
+
+- Skip Recovery option and click 'Next'
+
+![wizard11](images/db_install/wizard11.jpg)  
+
+- Specify admin passwords and click 'Next'. DO NOT FORGET YOUR PASSWORD  
+
+![wizard12](images/db_install/wizard12.jpg)  
+
+- Accept default operating system groups and click 'Next'
+
+![wizard13](images/db_install/wizard13.jpg)  
+
+- Do not use auto run configuration scripts and click 'Next'
+
+![wizard14](images/db_install/wizard14.jpg)  
+
+- On the screen of Prerequisite Checks, click on 'Fix & Check Again'
+
+![wizard15](images/db_install/wizard15.jpg)  
+
+- A script is generated to fix it, run that script in SSH as follows:
+
+![wizard16](images/db_install/wizard16.jpg)  
+
+Run the script with sudo <full_name_of_the_script>  
+
+![wizard17](images/db_install/wizard17.jpg)  
+
+After running the script, click on 'OK' from the GUI installer.  
+
+Some of the pre-requisites are still missing, install those pre-requisites with the following in SSH:  
+
+sudo yum install oracle-database-server-12cR2-preinstall  
+
+![wizard18](images/db_install/wizard18.jpg)  
+
+Type 'y' to continue the installation.  
+
+Upon completion, go back to installer and click 'Check Again'  
+
+![wizard19](images/db_install/wizard19.jpg)  
+
+Now only issue left is swap size.
+
+
+
+
+
+
+
+- 
+
 Thank you, should you encounter any problems, please feel free to drop me a note at y.yeung@oracle.com.

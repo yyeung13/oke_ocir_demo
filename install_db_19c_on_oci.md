@@ -208,8 +208,50 @@ Now click 'Install' to start the installation process.
 
 Go back to Install GUI and click 'OK' to continue.
 
+- Complete the installation by clicking 'Close'  
 
-- 
+![wizard27](images/db_install/wizard27.jpg)  
+
+- Post installation environment setup from SSH  
+
+vi ~/.bash_profile  
+
+Add environment info as follows:  
+
+![wizard28](images/db_install/wizard28.jpg)  
+
+- Before you can access the database, you also need to open up firewall rules within OCI compute:  
+
+sudo firewall-cmd --permanent --zone=public --add-port=1521/tcp  
+sudo firewall-cmd --reload  
+
+![wizard31](images/db_install/wizard31.jpg)  
+
+
+In addition, you need to open up the ingress rule on the subnet where the compute is located from OCI console. Details on how to configure ingress rules can be found here (https://docs.cloud.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm)  
+
+Make sure you specify CIDR block 0.0.0.0/0 and destination prot as 1521.  
+
+- To verify the database is up and running, restart SSH to let environment parameters take effect, and run 'sqlplus sys@orcl as sysdba':
+
+Use the SQLs below to verify the database status:  
+
+Check CDB: select instance_name,status from v$instance;  
+Check PDBs: SELECT NAME, OPEN_MODE, RESTRICTED, OPEN_TIME FROM V$PDBS;  
+
+
+![wizard29](images/db_install/wizard29.jpg)  
+
+
+- Note the database service name in tnsora.ora in $ORACLE_HOME/network/admin
+
+![wizard30](images/db_install/wizard30.jpg)  
+
+- To connect to the database, e.g., using SQLDeveloper, use the following config (replace hostname with public IP of the database):
+
+![wizard32](images/db_install/wizard32.jpg)  
+
+Now your database is up and running and you can connect to it!  
 
 
 Thank you, should you encounter any problems, please feel free to drop me a note at y.yeung@oracle.com.

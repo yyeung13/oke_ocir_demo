@@ -34,7 +34,7 @@ You should be able to see the follow
 
 ## Step 3: Export Display from OCI
 
-Refer to [here](enable_display_on_oci.md)  
+Refer to [here](enable_display_in_oci.md)  
 
 ## Step 4: Extract WebLogic Installer
 

@@ -24,6 +24,7 @@ sudo chown opc:opc /u01/install
 
 - Upload database installer to /u01/install folder. If you are using MobaTerm, simply use the upload feature that comes with MobaTerm. Otherwise, you can use another other tool. If you are downloading from edelivery (http://edelivery.oracle.com)), note that there is a wget feature that allows you to generate a script and download DB installer directly to the compute instance, which is a lot faster. Make sure you login with your Oracle account when you run the wget generated download scripts. Sample download script is [here](images/db_install/download_db.sh)
 
+- I would suggest you generate your own download script from edelivery. If you use mine, you will be downloading Oracle Database, Oracle Database Client as well as Oracle Grid Infrastructure within one single download
 
 - If you are using the WGET option above, put the download script under /u01/install and run it with 'download_db.sh'
 - Make sure the script is executable, and from /u01/install, run ./download.db.sh
@@ -40,6 +41,13 @@ You can tail the log file with 'tail -f <log_file_name>' to see the progress
 
 ![screenshot4](images/db_install/db4.jpg)  
 
+When the download complete, review the files under /u01/install  
+
+![screenshot5](images/db_install/db5.jpg)  
+
+## Step 3: Enable Remote Display for OCI Compute
+
+In order to run the installer, you need to export DISPLAY from OCI to your local laptop first. Follow the guide [here](enable_display_in_oci.md)  
 
 
 Thank you, should you encounter any problems, please feel free to drop me a note at y.yeung@oracle.com.

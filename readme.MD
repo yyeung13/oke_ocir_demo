@@ -12,7 +12,7 @@ This series of demo explains how to use Oracle technologies for DevOps. At the m
 - Enable Display on OCI [here](enable_display_in_oci.md)
 - Add Block Storage to OCI [here](add_block_storage_to_oci.md)
 - Install WebLogic On Prem on OCI: How to install WebLogic On Prem on OCI [here](weblogic_standalone_setup_on_oci.md)
-- Install Oracle Database 19c On Prem on OCI (coming)
+- Install Oracle Database 19c On Prem on OCI [here](install_db_19c_on_oci.md)
 
 
 More demos are on the way.

@@ -50,6 +50,8 @@ sudo mkdir /u01
 
 sudo mount /dev/oracleoci/oraclevdb /u01  
 
+** Note: If after reboot, your file is missing in /u01, rerun this command to mount again.  
+
 - You are ready to use the file system. To verify the result, run 'df -h' to see the new file systems and its available storage.
 
 

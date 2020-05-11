@@ -38,7 +38,7 @@ Refer to [here](enable_display_in_oci.md)
 
 ## Step 4: Extract WebLogic Installer
 
-From install folder, run command: unzip fmw_14.1.1.0.0_wls_Disk1_1of1.zip  
+From install folder, run command: unzip fmw_14.1.1.0.0_wls_Disk1_1of1.zip (For optimal experience running the installer, provision a Windows compute within the same OCI subnet and run MobaTerm within the Windows server, it's a lot faster)    
 
 ![Screenshot 6](images/weblogic_install/screenshot6.jpg)  
 

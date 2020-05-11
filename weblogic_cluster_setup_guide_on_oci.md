@@ -60,6 +60,8 @@ Wait for VM provision to complete, and review the VM details, capture the public
 
 ![cluster9](images/weblogic_install/cluster9.jpg)  
 
+A lot of customer out there is using putty, while the rest of the demo will be using MobaTerm for its ease of X11 Display, I have included option steps here to setup access via Putty in case you are using Putty.  
+
 To test the VM, open Putty and enter the IP of the VM:  
 
 ![cluster10](images/weblogic_install/cluster10.jpg)  
@@ -72,9 +74,14 @@ Click on 'Yes':
 
 ![cluster12](images/weblogic_install/cluster12.jpg)  
 
-You are in and ready to move to the next step!  
-
 ![cluster13](images/weblogic_install/cluster13.jpg)  
+
+That's all you need with Putty.  
+
+With MobaTerm, the steps are very similar and the SSH private key configuration is here instead:  
+
+![cluster15](images/weblogic_install/cluster15.jpg)  
+
 
 ## Step 2: Install WebLogic Binary on the first VM
 

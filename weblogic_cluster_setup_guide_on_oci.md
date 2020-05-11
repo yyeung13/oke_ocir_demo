@@ -224,7 +224,19 @@ Monitor the log server1.log to make sure ms1 is up. You can see this from WebLog
 
 ![cluster41](images/weblogic_install/cluster41.jpg)  
 
-## Step 4: Configure Node Manager for First VM
+## Step 4: Configure Node Manager for First VM  
+
+To start node manager, change working directory to <domain_home>/bin and run this: nohup ./startNodeManager.sh &  
+
+To verify the node manager is working, navigate from WebLogic Console: <domain_name> -> Environment -> Machines, and click on Machine1:  
+![cluster42](images/weblogic_install/cluster42.jpg)  
+
+Click 'Monitoring' tab above and verify the machine is reachable.  
+
+![cluster43](images/weblogic_install/cluster43.jpg)  
+
+With node manager working, you can also stop/start managed server ms1 from WebLogic Console directly. We are done with the first VM and can now move on to the next step.
+
 ## Step 5: Clone Boot Volume of First VM into Second VM
 ## Step 6: Provision Second VM weblogic2
 ## Step 7: Prepare Second VM to join WebLogic Cluster

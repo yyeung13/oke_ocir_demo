@@ -1,6 +1,6 @@
 # WebLogic Cluster Setup Guide on OCI
 
-This guide leverages on OCI features to setup a on-prem WebLogic environment on OCI (Oracle Cloud Infrastructure). This is typically applicable if you are using Oracle cloud for development, functional testing or performance testing of on-prem WebLogic applications.
+This guide leverages on OCI features to setup a on-prem WebLogic environment on OCI (Oracle Cloud Infrastructure). This is typically applicable if you are using Oracle cloud for development, functional testing or performance testing of on-prem WebLogic applications. This guide assumes you have basic WebLogic Administration knowledge and is familiar with WebLogic Console.
 
 ## Overview
 
@@ -10,10 +10,9 @@ In the following steps, you will be setting up a weblogic cluster that spans acr
 - Install WebLogic Binary on the first VM  
 - Configure a new clustered WebLogic Domain with 2 managed servers  
 - Configure node manager for the first VM  
-- Clone the boot volume of the first VM to be the boot volume of the second VM  
-- Provision second VM (weblogic2) using the boot volume cloned  
+- Clone the boot volume of the first VM to be the boot volume of the second VM, and provision second VM (weblogic2) using the boot volume cloned  
 - Prepare the second VM to join WebLogic Cluster  
-- Bring up and test WebLogic Cluster across two VMs  
+
 
 
 ## Step 1: Provision first VM weblogic1 on OCI using standard images
@@ -238,6 +237,73 @@ Click 'Monitoring' tab above and verify the machine is reachable.
 With node manager working, you can also stop/start managed server ms1 from WebLogic Console directly. We are done with the first VM and can now move on to the next step.
 
 ## Step 5: Clone Boot Volume of First VM into Second VM
-## Step 6: Provision Second VM weblogic2
-## Step 7: Prepare Second VM to join WebLogic Cluster
-## Step 8: Bring Up and Test WebLogic Cluster
+
+We need to shutdown the first VM before cloning, go to the details screen of the first VM from Cloud Console and click on 'Stop' to shutdown the VM:  
+
+![cluster50](images/weblogic_install/cluster50.jpg)  
+
+Click on 'Stop Instance' to confirm:  
+
+![cluster51](images/weblogic_install/cluster51.jpg)  
+
+Once the instance is down, click on 'Boot volume' from the left menu:  
+
+![cluster52](images/weblogic_install/cluster52.jpg)  
+
+Click on the link to access boot volume as follows:  
+
+![cluster53](images/weblogic_install/cluster53.jpg)  
+
+From the boot volume details screen, click on 'Boot Volume Clones' and click 'Create Clone':  
+
+![cluster54](images/weblogic_install/cluster54.jpg)  
+
+Enter name 'weblogic2' and click on 'Create Clone':  
+
+![cluster55](images/weblogic_install/cluster55.jpg)  
+
+Wait for the clone to be available, and select 'Create Instance' from the right menu as follows:  
+
+![cluster56](images/weblogic_install/cluster56.jpg)  
+
+Enter name as 'weblogic2' as follows:  
+
+![cluster57](images/weblogic_install/cluster57.jpg)  
+
+For subsequent fields, follow the same setting as weblogic1 above. Proceed to provision weblogic2 by clicking 'Create'. Wait for instance provisioning to complete.  
+
+![cluster58](images/weblogic_install/cluster58.jpg)  
+
+Take note of the public IP and internal IP of the new VM weblogic2.  
+
+Go back to Instances details for weblogic1 and start up weblogic1 too.  
+
+![cluster59](images/weblogic_install/cluster59.jpg)  
+
+## Step 6: Prepare Second VM to join WebLogic Cluster
+
+SSH back to the first VM weblogic1 and start Admin Server & Node Manager again using same instruction earlier in this guide.  
+
+SSH to the second VM weblogic2 and change working directory to <domain_home>.  
+
+Open the file nodemanager.properties under <domain_home>/nodemanager, and change ListenAddress to the internal IP of weblogic2:  
+
+![cluster60](images/weblogic_install/cluster60.jpg)  
+
+Open local firewall in weblogic2 by running:  
+
+- sudo firewall-cmd --permanent --zone=public --add-port=5556/tcp  
+- sudo firewall-cmd --reload  
+
+Start node manager following same instruction in first VM weblogic1 above.  
+
+
+Login to the weblogic console again (http://\<public_ip_of_weblogic1\>:7001/console) again and nagivate to Machines list:  
+
+![cluster61](images/weblogic_install/cluster61.jpg)  
+
+Click on 'machine2' -> 'Node Manager' to update the IP of machine 2 with actual internal IP of weblogic2:  
+
+![cluster62](images/weblogic_install/cluster62.jpg)  
+
+

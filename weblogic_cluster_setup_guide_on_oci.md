@@ -220,10 +220,9 @@ This shows WebLogic Server is now up and running.
 
 To start the first managed server, follow the similar steps above to create the same boot.properties file under <domain_home>/servers/ms1/security, and run the start script from <domain_home>/bin: nohup ./startManagedWebLogic ms1 localhost:7001 > server1.log &  
 
-Monitor the log server1.log to make sure ms1 is up.  
+Monitor the log server1.log to make sure ms1 is up. You can see this from WebLogic Console:  
 
-
-
+![cluster41](images/weblogic_install/cluster41.jpg)  
 
 ## Step 4: Configure Node Manager for First VM
 ## Step 5: Clone Boot Volume of First VM into Second VM

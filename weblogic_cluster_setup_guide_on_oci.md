@@ -200,7 +200,7 @@ cd security
 File content should be as follows:  
 
 username=weblogic  
-password=<selected password during domain configuration wizard>  
+password=\<selected password during domain configuration wizard\>  
 
 - Change working directory to <Domain_home>/bin  
 - Start Admin server with the command: nohup ./startWebLogic.sh > admin.log &  

@@ -22,7 +22,7 @@ First login to your Oracle cloud tenancy from http://cloud.oracle.com with your 
 
 Click on the Menu on the top left hand corner and select 'Compute' -> 'Instances'. (Note that it's a good practice to create separate compartment and VCN for multitenancy purpose, this part is not included in the guide here)  
 
-![cluster1](images/weblogic_install/cluster1.jpg]  
+![cluster1](images/weblogic_install/cluster1.jpg)  
 
 
 

@@ -17,6 +17,15 @@ In the following steps, you will be setting up a weblogic cluster that spans acr
 
 
 ## Step 1: Provision first VM weblogic1 on OCI using standard images
+
+First login to your Oracle cloud tenancy from http://cloud.oracle.com with your tenancy ID, username and password.  
+
+Click on the Menu on the top left hand corner and select 'Compute' -> 'Instances'. (Note that it's a good practice to create separate compartment and VCN for multitenancy purpose, this part is not included in the guide here)  
+
+![cluster1](images/weblogic_install/cluster1.jpg]  
+
+
+
 ## Step 2: Install WebLogic Binary on the first VM
 
 Follow installation guide [here](weblogic_standalone_setup_on_oci.md)

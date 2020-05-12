@@ -17,9 +17,9 @@ In the following steps, you will be setting up a weblogic cluster that spans acr
 
 ## Step 1: Provision first VM weblogic1 on OCI using standard images
 
-Before provisioning VM, you need to generate a RSA key pair for the compute so that later on you can SSH to the compute with the key pair.  
+Before provisioning VM, you need to generate a RSA key pair for the compute so that later on you can SSH to the compute with the key pair. You can refer to here https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/javaservice/JCS/JCS_SSH/create_sshkey.html.
 
-*** TODO ***  
+The rest of the guide assume you have generated a key pair named: id_rsa, with its private key in id_rsa.ppk and public key in id_rsa.pub.  
 
 Now login to your Oracle cloud tenancy from http://cloud.oracle.com with your tenancy ID, username and password.  
 

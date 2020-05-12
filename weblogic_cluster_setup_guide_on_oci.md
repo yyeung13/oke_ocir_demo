@@ -306,4 +306,29 @@ Click on 'machine2' -> 'Node Manager' to update the IP of machine 2 with actual 
 
 ![cluster62](images/weblogic_install/cluster62.jpg)  
 
+Disable host name verification for all managed servers by clicking on each managed server name on the left menu and click on 'SSL' tab, 'Advanced' and select Hostname Verification as 'None'. This is becasuse the auto generated certificate is for weblogic1 and weblogic2 is using the same certificate from the same boot volume and doesn't match the name on certificate as weblogic1.  
+
+![cluster63](images/weblogic_install/cluster63.jpg)  
+
+Restart the admin server by shutting it down from WebLogic Console, and starting it from SSH to weblogic1. Instruction on starting admin server is in earlier part of this guide.  
+
+By default the node manager in weblogic2 is already running. However, we have to disable the hostname verification too. SSH to weblogic2 and login as opc. Use the following command to identify the process ID of node manager: ps -eaf | grep java  
+
+![cluster64](images/weblogic_install/cluster64.jpg)  
+
+Kill the Node Manager with: kill -9 <pid>, e.g., if the process ID is 6641, the command to kill is: kill -9 6641  
+
+Change working directory to <domain_home>/bin and edit the file startNodeManager.sh. Add '-Dweblogic.nodemanager.sslHostNameVerificationEnabled=false' to JAVA Options as follows:  
+
+![cluster65](images/weblogic_install/cluster65.jpg)  
+
+Restart node manager by running: nohup ./startNodeManager.sh > nm.log &  
+
+Go back to WebLogic Console, click on 'Machines' -> machine1/machine2 -> 'Monitoring', and ensure both machine is reachable:  
+
+![cluster66](images/weblogic_install/cluster66.jpg)  
+
+WebLogic Cluster is now ready for use.
+
+
 

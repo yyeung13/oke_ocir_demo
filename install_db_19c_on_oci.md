@@ -2,7 +2,14 @@
 
 ## Pre-requisite
 
-This guide assumes you have already provisioned OEL Compute on OCI and have SSH access to the environment
+This guide assumes you have already provisioned OEL Compute on OCI and have SSH access to the environment.  
+
+If you are attending instructor-led workshop, please ensure you follow the additional pre-requisites here:  
+
+* Provision a windows server with 4 OCPU on your Oracle cloud account  
+* Install Chrome and MobaTerm on the windows server  
+* Provision a Oracle Enterprise Linux server with 4 OCPU on the same Oracle cloud account within the same VCN (Virtual Cloud Network) as the windows server  
+* Follow instruction on step 2 below to pre-download Oracle Database installation files on this compute to save time (Your instructor will advise how to copy the file to the new compute you will be provisioning in the actual hands on session  
 
 ## Step 1: Add Addition Block Storage to Compute
 

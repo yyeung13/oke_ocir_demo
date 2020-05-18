@@ -21,3 +21,34 @@ You need to have a Oracle OCI Gen 2 account with sufficient credit to provision 
 
 ![scheduler1.jpg](images/oci/scheduler1.jpg)
 
+* Click on 'Create Instance'
+
+![scheduler2.jpg](images/oci/scheduler2.jpg)
+
+* Name the instance as 'scheduler' (You can use other names too) and accept the default image
+
+![scheduler3.jpg](images/oci/scheduler3.jpg)
+
+* Accept the default shape as VM.Standard 2.1 as this only incur one CPU
+
+![scheduler4.jpg](images/oci/scheduler4.jpg)
+
+* Make sure the compute is in your preferred compartment with the appropriate VCN and subnet. We are using a public subnet here so that later we can directly SSH to the instance. If you would like to keep in on a private subnet, you will need to setup Bastion host as a gateway to access the scheduler later. For simplicity here, we use public subnet and create a public IP for this compute
+
+![scheduler5.jpg](images/oci/scheduler5.jpg)
+
+* Ensure you have selected 'Assign Public IP Address'
+
+![scheduler6.jpg](images/oci/scheduler6.jpg)
+
+* Provide a public key. If you need help with key pair generation, refer to https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/javaservice/JCS/JCS_SSH/create_sshkey.html. If you are only testing/evaluating and do not want to create your own key pair, this guide also includes a demo key pair [here](keys/readme.MD)
+
+![scheduler7.jpg](images/oci/scheduler7.jpg)
+
+* 
+
+
+
+
+
+

@@ -154,6 +154,8 @@ For start, it is as follows:
 - cd ~opc/scripts  
 - vi startVM.sh  
 
+Note that you need to add '. ~opc/.bash_profile' so that the script can load the environment variables when running in crontab later.  
+
 ![scheduler26.jpg](images/oci/scheduler26.jpg)  
 
 VM OCID can be found on Oracle Cloud Console details view of the compute to be start/stop:  

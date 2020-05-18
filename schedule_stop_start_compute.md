@@ -6,7 +6,7 @@ Sometimes we want to only use OCI Compute for certain hours of the day and would
 
 Stop/Start OCI Compute can be done via either Oracle Cloud Console GUI or OCI CLI (Command Line Interface). While it's the easiest to perform these task via Cloud Console GUI, scheduling require CLI instead.  
 
-We can either hose the OCI CLI on a small OCI Compute itself, or runs on a Windows Server locally, or a UNIX Server locally. This guide assumes you are running it on a small OCI compute. If you are running on Windows, simply refer to the part about OCI CLI details in this guide, and register the stop/start script with Windows Task Scheduler. For local UNIX, you can skip the part of provisioning OCI Compute in this guide and follow the rest of the steps.  
+We can either hose the OCI CLI on a small OCI Compute itself, or runs on a Windows Server locally, or a UNIX Server locally. This guide assumes you are running it on a small OCI compute. If you are running on Windows, simply refer to the part about OCI CLI details in this guide, and register the stop/start script with Windows Task Scheduler. For local UNIX, you can skip step 1 and start with step 2
 
 ## Pre-Requisite
 
@@ -43,9 +43,66 @@ You need to have a Oracle OCI Gen 2 account with sufficient credit to provision 
 
 * Provide a public key. If you need help with key pair generation, refer to https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/javaservice/JCS/JCS_SSH/create_sshkey.html. If you are only testing/evaluating and do not want to create your own key pair, this guide also includes a demo key pair [here](keys/readme.MD)
 
-![scheduler7.jpg](images/oci/scheduler7.jpg)
+![scheduler7.jpg](images/oci/scheduler7.jpg)  
+
+Click on 'Create' to start provisioning the new compute.
+
+* Once the compute is provision, take note of the public IP of the compute
+
+![scheduler8.jpg](images/oci/scheduler8.jpg)  
+
+* From Putty/MobaTerm, SSH to the compute with its public IP and the private key. This guide shows the configuration of MobaTerm
+
+![scheduler9.jpg](images/oci/scheduler9.jpg)  
+
+* Click on 'Session' icon as show above
+
+![scheduler10.jpg](images/oci/scheduler10.jpg)  
+
+* Click on 'SSH' and enter the public IP of the scheduler compute, and specify 'opc' as default username
+
+![scheduler11.jpg](images/oci/scheduler11.jpg)  
+
+* Under advanced SSH settings, provide the private key to login with
+
+![scheduler12.jpg](images/oci/scheduler12.jpg)  
+
+* Click on 'OK' to login, you should be able to login to the scheduler compute
+
+![scheduler13.jpg](images/oci/scheduler13.jpg)  
+
+
+### Step 2: Prepare Start/Stop Script
+
+* We will put all scripts under a folder called 'scripts'. Run the following to create a directory called 'scripts' under user 'opc' home  
+
+- mkdir scripts  
+- cd scripts  
+
+![scheduler15.jpg](images/oci/scheduler15.jpg)  
+
+* Install OCI CLI (Command Line Interface)  
+
+- bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"  
+- You can accept default for all prompts during installation  
+
+![scheduler16.jpg](images/oci/scheduler16.jpg)  
+
+* After the installation, verify setup is correct by running  
+
+- oci -v  
+
+![scheduler17.jpg](images/oci/scheduler17.jpg)  
 
 * 
+
+
+
+
+
+
+
+
 
 
 

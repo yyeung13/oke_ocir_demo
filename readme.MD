@@ -12,7 +12,7 @@ This series of demo explains how to use Oracle technologies for DevOps. At the m
 - Enable Display on OCI [here](enable_display_in_oci.md)
 - Add Block Storage to OCI [here](add_block_storage_to_oci.md)
 - Install WebLogic On Prem on OCI: How to install WebLogic On Prem on OCI [here](weblogic_standalone_setup_on_oci.md)
-- Setup WebLogic Cluster On Prem on OCI [here](weblogic_cluster_setup_guide_on_oci.md)
+- Setup WebLogic 14c Cluster On Prem on OCI [here](weblogic_cluster_setup_guide_on_oci.md). Should you want to use 12c instead, refer to this guide (https://github.com/tazlambert/weblogic-lift-shift/blob/master/weblogic.setup.cluster.oci.md)
 - Install Oracle Database 19c On Prem on OCI [here](install_db_19c_on_oci.md)
 
 

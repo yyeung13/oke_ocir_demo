@@ -19,5 +19,5 @@ You need to have a Oracle OCI Gen 2 account with sufficient credit to provision 
 * Login to Oracle Cloud Console from http://cloud.oracle.com and login with your tenancy ID and login credentials
 * Click on the burger icon on the top left hand corner and select Compute -> Instances
 
-![schedule1.jpg](images/oci/schedule1.jpg)
+![scheduler1.jpg](images/oci/scheduler1.jpg)
 

@@ -5,7 +5,7 @@ The easist way is to use MobaTerm (https://mobaxterm.mobatek.net/download.html).
 
 Run the following from SSH:  
 
-- sudu su -
+- sudo su -
 - cd /etc/ssh/
 - vi sshd_config
 - Search for the line that has X11UseLocalhost yes (it’s commented out).

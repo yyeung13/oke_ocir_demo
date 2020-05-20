@@ -254,7 +254,7 @@ Check PDBs: SELECT NAME, OPEN_MODE, RESTRICTED, OPEN_TIME FROM V$PDBS;
 
 ![wizard30](images/db_install/wizard30.jpg)  
 
-- To connect to the database, e.g., using SQLDeveloper, use the following config (replace hostname with public IP of the database):
+- To connect to the database, e.g., using SQLDeveloper, use the following config (replace hostname with public IP of the database, and use PDB name instead of CDB name in service name):
 
 ![wizard32](images/db_install/wizard32.jpg)  
 

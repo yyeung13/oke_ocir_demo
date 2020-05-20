@@ -65,7 +65,7 @@ sudo mkdir /u01/oracle
 sudo chown opc:opc /u01/oracle  
 cd /u01/oracle  
 
-- Extract Installer here:  
+- Extract Installer here **Make sure you extract the installer to /u01/oracle as this will be the Oracle Home later**:  
 
 unzip /u01/install/V982063-01.zip
 

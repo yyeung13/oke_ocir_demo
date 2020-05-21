@@ -114,7 +114,7 @@ Change SELINUX to disabled as shown
 
 * Specify Source CIDR using the CIDR info from VCN (so that this rule only apply to computes within the current internla network and not public network), and specify no destination port so that all ports are open. Click on 'Add Ingress Rule'. If you have concern on opening too many ports, please specify destination port as '7777,3260'
 
-![blockstorage22](images/block_storage/blockstorage22.jpg)  
+![blockstorage43](images/block_storage/blockstorage43.jpg)  
 
 * You also need to open firewall rules within node 1 and node 2. To do this, login to both node 1 and node 2 via SSH, login with opc and run the following commands **[IMPORTANT] DO NOT FORGET THIS STEP**:  
 
@@ -265,7 +265,7 @@ cat /u01/oracle/readme
 
 cat /u01/oracle/readme  
 
-![blockstorage42](images/block_storage/blockstorage42.jpg)  
+![blockstorage40](images/block_storage/blockstorage40.jpg)  
 
 
 * Congratulations, the shared storage is working!

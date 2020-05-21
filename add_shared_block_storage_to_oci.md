@@ -37,7 +37,7 @@ Before using this guide, you need to provide at least two of the nodes above. Th
 
 ![blockstorage5](images/block_storage/blockstorage5.jpg)  
 
-* Click on 'Attach o Instance'
+* Click on 'Attach to Instance'
 
 ![blockstorage6](images/block_storage/blockstorage6.jpg)  
 

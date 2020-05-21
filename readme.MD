@@ -10,7 +10,8 @@ This series of demo explains how to use Oracle technologies for DevOps. At the m
 - WebLogic on Docker Demo: Demonstrate how to run WebLogic on Docker and deploy applications on WebLogic, as well as updating the modified container into a new Docker image (with apps deployed) https://github.com/yyeung13/weblogic_docker_demo
 - Bastion Host Demo: Demo how to connect to computes with no private IP on OCI Gen 2 https://github.com/yyeung13/bastion_host_demo/
 - Enable Display on OCI [here](enable_display_in_oci.md)
-- Add Block Storage to OCI [here](add_block_storage_to_oci.md)
+- Add Dedicated Block Storage to OCI [here](add_block_storage_to_oci.md)
+- Add Shared Block Storage (READ/WRITE) to OCI [here](add_shared_block_storage_to_oci.md)
 - Schedule Stop/Start OCI Compute [here](schedule_stop_start_compute.md)
 - Install WebLogic On Prem on OCI: How to install WebLogic On Prem on OCI [here](weblogic_standalone_setup_on_oci.md)
 - Setup WebLogic 14c Cluster On Prem on OCI [here](weblogic_cluster_setup_guide_on_oci.md). Should you want to use 12c instead, refer to this guide (https://github.com/tazlambert/weblogic-lift-shift/blob/master/weblogic.setup.cluster.oci.md)

@@ -192,7 +192,7 @@ Run: sudo vi /etc/sysctl.conf
 
 Add this block:  
 
-/# Define panic and panic_on_oops for cluster operation  
+\# Define panic and panic_on_oops for cluster operation  
 kernel.panic=30  
 kernel.panic_on_oops=1  
 

@@ -1,6 +1,8 @@
-## How to Add Block Storage to OCI
+## How to Add Block Storage to OCI (Dedicated)
 
 The default VM boot volume in OCI is 46.6GB and may not be sufficient for our actual requirement. This guide explains how to add additional block volume and mount to OCI compute so that you can add additional storage to OCI.  
+
+**IMPORTANT** This guide will add a dedicated block storage to a compute that is not shareable with other computes. If you are looking at how to add block storage to be shared for READ/WRITE between multiple computes (e.g., setup Database RAC), refer to [here](add_shared_block_storage_to_oci.md) instead.
 
 
 ### Step 1: Create Block Volume

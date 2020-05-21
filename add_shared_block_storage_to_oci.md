@@ -116,6 +116,14 @@ Change SELINUX to disabled as shown
 
 ![blockstorage22](images/block_storage/blockstorage22.jpg)  
 
+* You also need to open firewall rules within node 1 and node 2. To do this, login to both node 1 and node 2 via SSH, login with opc and run the following commands **[IMPORTANT] DO NOT FORGET THIS STEP**:  
+
+sudo firewall-cmd --zone=public --permanent --add-port=7777/tcp  
+sudo firewall-cmd --zone=public --permanent --add-port=3260/tcp  
+sudo firewall-cmd --complete-reload  
+
+![blockstorage41](images/block_storage/blockstorage41.jpg)  
+
 #### Step 4: Setup OCFS2
 
 OCFS2 (https://en.wikipedia.org/wiki/OCFS2) is a shared disk file system to coordinate access to shared disk so as to prevent corruption. We must set it up before using the shared block volume or risk file corruptions.  
@@ -251,13 +259,13 @@ cat /u01/oracle/readme
 
 * After verify the file content from node 2, open the file in node 2 with 'vi /u01/oracle/readme', and change the file content as you wish. For example, the demo will change the file content as follows:
 
-![blockstorage39](images/block_storage/blockstorage39.jpg)  
+![blockstorage42](images/block_storage/blockstorage42.jpg)  
 
 * Go back to node 1 and check if you see the same content:
 
 cat /u01/oracle/readme  
 
-![blockstorage39](images/block_storage/blockstorage39.jpg)  
+![blockstorage42](images/block_storage/blockstorage42.jpg)  
 
 
 * Congratulations, the shared storage is working!
